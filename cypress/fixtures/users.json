@@ -1,0 +1,17 @@
+[
+    {
+        "UserType": "Null",
+        "Username": "",
+        "Password": ""
+    },
+    {
+        "UserType": "Invalid",
+        "Username": "happy@gmail.com",
+        "Password": "Karan"
+    },
+    {
+        "UserType": "Valid",
+        "Username": "happyy@gmail.com",
+        "Password": "Happy"
+    }
+]
