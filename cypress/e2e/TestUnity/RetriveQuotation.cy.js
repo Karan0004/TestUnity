@@ -15,7 +15,7 @@ const TryLoggingIn = (InUser) => {
     cy.get('[name=submit]').click({ force: true });
 }
 
-describe("Edit Profile", () => {
+describe("Request a Quotation", () => {
 
     before(() => {
         cy.fixture('users').then(Users => {
@@ -39,31 +39,15 @@ describe("Edit Profile", () => {
         });
     });
 
-    beforeEach("Visiting 'EditProfile' page...", () => {
-        cy.get('#ui-id-5').click({ force: true });
+    beforeEach("Visiting 'RetriveQuotation' page...", () => {
+        cy.get('#ui-id-3').click({ force: true });
     });
-    it("EditProfile...", () => {
-        cy.fixture('editprofile').then(EditProfile => {
-            EditProfile.forEach(EditProfile => {
-                cy.get('#user_surname')
-                    .type(EditProfile.SurName)
-                cy.get('#user_firstname')
-                    .type(EditProfile.FirstName)
-                cy.get('#user_phone')
-                    .type(EditProfile.Phone)
-                cy.get('#user_licenceperiod')
-                    .select(EditProfile.LicensePeriod)
-                cy.get('#user_occupation_id')
-                    .select(EditProfile.Occupation)
-                cy.get('#user_address_attributes_street')
-                    .type(EditProfile.Address)
-                cy.get('#user_address_attributes_city')
-                    .type(EditProfile.City)
-                cy.get('#user_address_attributes_county')
-                    .type(EditProfile.Country)
-                cy.get('#user_address_attributes_postcode')
-                    .type(EditProfile.Postcode)
-                cy.get('[name=commit]').click();
+    it("Requesting a valid retrivequotation...", () => {
+        cy.fixture('retrivequotations').then(RetriveQuotations => {
+            RetriveQuotations.forEach(RetriveQuotations => {
+                cy.get('form > [type="text"]')
+                    .type(RetriveQuotations.IdentificationNumber)
+                cy.get('#getquote').click();
             });
         });
     });

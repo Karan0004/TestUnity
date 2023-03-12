@@ -1,0 +1,13 @@
+[
+    {
+        "SurName": "H",
+        "FirstName": "Happy",
+        "Phone": 4444444,
+        "LicensePeriod": 3,
+        "Occupation": 4,
+        "Address": "Rangu street",
+        "City": "Noida",
+        "Country": "India",
+        "Postcode": 345678
+    }
+]

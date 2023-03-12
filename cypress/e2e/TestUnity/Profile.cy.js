@@ -40,30 +40,11 @@ describe("Request a Quotation", () => {
     });
 
     beforeEach("Visiting 'Quotation' page...", () => {
-        cy.get('#ui-id-2').click({ force: true });
+        cy.get('#ui-id-4').click({ force: true });
     });
 
     it("Requesting a valid quotation...", () => {
-        cy.fixture('quotations').then(Quotations => {
-            Quotations.forEach(Quotation => {
-                cy.get('#quotation_breakdowncover')
-                    .select(Quotation.BreakdownCover);
-
-                cy.get('#quotation_incidents')
-                    .type(Quotation.Incidents);
-                cy.get('[name=registration]')
-                    .type(Quotation.Registration);
-                cy.get('#quotation_vehicle_attributes_mileage')
-                    .type(Quotation.AnnualMileage);
-                cy.get('#quotation_vehicle_attributes_value')
-                    .type(Quotation.EstimatedValue);
-                cy.get('#quotation_vehicle_attributes_parkinglocation')
-                    .select(Quotation.ParkingLocation);
-                cy.get('#new_quotation > .actions > .btn-success')
-                    .click({ force: true });
-
-
-            });
-        });
-    });
+        cy.get('.button_to > .btn')
+            .click();
+    })
 })
